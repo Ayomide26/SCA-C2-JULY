@@ -1,5 +1,8 @@
 # SCA-C2-JULY
 # Week 1
+
+# SQLite
+
 Question 1
 
 which city has the best customers?we would like to throw a promotional Music Festival in the city we made the most money .Write a query that returns the 1 city that has the highest sum of invoice totals .Return both the city name and the sum of all invoices totals.

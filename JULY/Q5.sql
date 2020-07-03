@@ -1,14 +1,14 @@
 WITH tab1 AS (
 	SELECT 
-	c.CustomerId,
-	c.FirstName, 
-	c.LastName,
-	c.Country, 
-	SUM(i.Total) Total_Spend
-	FROM Customer c
-	JOIN Invoice i 
-	ON c.CustomerId = i.CustomerId
-	GROUP BY c.CustomerId),
+	Customer.CustomerId,
+	Customer.FirstName, 
+	Customer.LastName,
+	Customer.Country, 
+	SUM(Invoice.Total) Total_Spend
+	FROM Customer 
+	JOIN Invoice 
+	ON Customer.CustomerId = Invoice.CustomerId
+	GROUP BY Customer.CustomerId),
         tab2 AS     (
                 SELECT 
 	CustomerId, 

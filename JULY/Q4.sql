@@ -1,16 +1,16 @@
 SELECT DISTINCT
-       C.FirstName AS FirstName,
-       C.LastName  AS LastName,
-       C.Email     AS Email,
-       G.Name      AS Name
-  FROM Customer C 
-  JOIN Invoice I 
-    ON C.CustomerId = I.CustomerId 
-    JOIN InvoiceLine IL 
-    ON I.InvoiceId = IL.InvoiceId 
-    JOIN Track T 
-    ON IL.TrackId = T.TrackId 
-    JOIN Genre G 
-    ON T.GenreId = G.GenreId 
- WHERE G.Name = "Rock" 
-ORDER BY C.Email;
+       Customer.FirstName,
+       Customer.LastName,
+       Customer.Email,
+       Genre.Name  
+  FROM Customer  
+  JOIN Invoice  
+    ON Customer.CustomerId = Invoice.CustomerId 
+    JOIN InvoiceLine 
+    ON Invoice.InvoiceId = InvoiceLine.InvoiceId 
+    JOIN Track  
+    ON Invoiceline.TrackId = Track.TrackId 
+    JOIN Genre  
+    ON Track.GenreId = Genre.GenreId 
+ WHERE Genre.Name = "Rock" 
+ORDER BY Customer.Email;
